@@ -2,30 +2,33 @@
 C++ Kimlik numarası kontrol kütüphanesi. 11 haneli T.C. Kimlik numarasının doğruluğunun kontrolünü yapar. Geriye true-false değer döndürür.
 
 ## Metodlar
-    extern "C" KIMLIKNOKONTROL bool KimlikNo(long long _tcno);
+```cpp
+extern "C" KIMLIKNOKONTROL bool KimlikNo(long long _tcno);
+```
 
 ## Örnek Uygulama
-    #include <iostream>
-    #include "KimlikNoKontrol.h"
+```cpp
+#include <iostream>
+#include "KimlikNoKontrol.h"
 
-    using namespace std;
+using namespace std;
 
-    int main()
+int main()
+{
+    long long TcNo;
+    cout << "TC No Giriniz:";
+    cin >> TcNo;
+    if (KimlikNo(TcNo))
     {
-        long long TcNo;
-        cout << "TC No Giriniz:";
-        cin >> TcNo;
-        if (KimlikNo(TcNo))
-        {
-            cout << "Dogru" << endl;
-        }
-        else
-        {
-            cout << "Hatali" << endl;
-        }
-        return 0;
+        cout << "Dogru" << endl;
     }
-
+    else
+    {
+        cout << "Hatali" << endl;
+    }
+    return 0;
+}
+```
 ## Lisans
 Copyright (c) 2022 Koray Üstündağ
 
